@@ -202,7 +202,6 @@ ORG = {
     "logo": f"{SITE}/assets/img/nhutin-logo.png",
     "foundingDate": "2010",
     "telephone": PHONE_TEL,
-    "email": "[EMAIL]",
     "sameAs": ["https://nhutin.com", "https://bavohatdieu.com"],
 }
 
@@ -216,8 +215,7 @@ def business(L):
         "url": f"{SITE}/{L['path']}",
         "image": f"{SITE}/assets/img/og-image.jpg",
         "telephone": PHONE_TEL,
-        "email": "[EMAIL]",
-        "taxID": "[MST]",
+        "taxID": "0309707718",
         "address": {"@type": "PostalAddress", "streetAddress": "222C đường Linh Trung, Phường Linh Xuân",
                     "addressLocality": "Thành phố Hồ Chí Minh", "addressCountry": "VN"},
         "areaServed": "VN",
