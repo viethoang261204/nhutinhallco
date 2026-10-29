@@ -6,9 +6,10 @@
      CẤU HÌNH FORM (xem README, mục "Cấu hình form")
      mode: 'php'    -> gửi tới send.php (SMTP qua PHPMailer)
            'gsheet' -> gửi tới Google Apps Script, ghi vào Google Sheet
+           'demo'   -> không gửi đi đâu, chỉ kiểm tra dữ liệu rồi mời gọi hotline (bản demo giao diện)
      ---------------------------------------------------------------- */
   var FORM_CONFIG = {
-    mode: 'php',
+    mode: 'demo',
     phpEndpoint: 'send.php', // tính từ thư mục gốc website, trang tiếng Anh ở en/ vẫn gửi đúng chỗ
     gsheetEndpoint: '' // dán URL Web App dạng https://script.google.com/macros/s/.../exec
   };
@@ -31,6 +32,7 @@
       needEmpty: 'Chọn nhu cầu gần nhất với xe của bạn.',
       wait: function (sec) { return 'Bạn vừa gửi một yêu cầu. Đợi ' + sec + ' giây rồi gửi lại, hoặc gọi ' + HOTLINE + '.'; },
       noEndpoint: 'Form chưa được cấu hình nơi nhận. Gọi ' + HOTLINE + ' để được báo giá.',
+      demo: 'Đây là bản demo, form tạm chưa gửi đi. Gọi ' + HOTLINE + ' để được báo giá.',
       sending: 'Đang gửi yêu cầu…',
       submit: 'Gửi yêu cầu báo giá',
       network: 'Chưa gửi được yêu cầu do lỗi kết nối. Gửi lại sau ít phút hoặc gọi ' + HOTLINE + '.'
@@ -46,6 +48,7 @@
       needEmpty: 'Choose the option closest to your needs.',
       wait: function (sec) { return 'You just sent a request. Wait ' + sec + ' seconds before sending again, or call ' + HOTLINE + '.'; },
       noEndpoint: 'The form has no destination configured yet. Call ' + HOTLINE + ' for a quote.',
+      demo: 'This is a demo, the form is not sending yet. Call ' + HOTLINE + ' for a quote.',
       sending: 'Sending your request…',
       submit: 'Request a quote',
       network: 'Your request could not be sent because of a connection problem. Try again in a few minutes or call ' + HOTLINE + '.'
@@ -356,6 +359,11 @@
       var data = new FormData(form);
       data.set('phone', normalizePhone(data.get('phone')));
       data.set('page', location.href);
+
+      if (FORM_CONFIG.mode === 'demo') {
+        statusEl.textContent = T.demo;
+        return;
+      }
 
       var endpoint = FORM_CONFIG.mode === 'gsheet'
         ? FORM_CONFIG.gsheetEndpoint

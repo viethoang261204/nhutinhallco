@@ -189,18 +189,23 @@ Trong GA4, đánh dấu `generate_lead` là *Sự kiện chính* (Key event) đ�
 
 ## 5. Đưa lên hosting
 
-### Render (Docker)
+### Render: bản demo giao diện (đang dùng)
+
+`render.yaml` hiện tạo **Static Site miễn phí**: không cần PHP, không bị tắt khi không có truy cập. Form ở chế độ `mode: 'demo'` trong `js/main.js`: vẫn kiểm tra dữ liệu nhưng không gửi đi đâu, chỉ báo "bản demo" kèm hotline. Triển khai: Render → *New → Blueprint* → chọn repo → *Apply*.
+
+Khi cần form chạy thật: đổi `mode` sang `'php'` (dùng Docker bên dưới) hoặc `'gsheet'` (giữ Static Site).
+
+### Render (Docker), khi cần form gửi mail
 
 Repo đã có `Dockerfile` (PHP 8.3 + Apache, dùng luôn `.htaccess`) và `render.yaml`. `.dockerignore` loại `_src/`, `tools/`, `docs/`, `google-apps-script/` và file `.md` khỏi máy chủ.
 
 1. Đẩy code lên GitHub.
-2. Render → *New → Blueprint* → chọn repo. Render đọc `render.yaml`, hỏi các biến SMTP và `MAIL_TO` (xem mục 3) rồi build.
-   Không dùng Blueprint thì: *New → Web Service* → chọn repo → *Language: Docker*, rồi tự thêm các biến ở *Environment*, kèm `TRUST_PROXY=1`.
+2. Render → *New → Web Service* → chọn repo → *Language: Docker*, rồi tự thêm các biến ở *Environment*, kèm `TRUST_PROXY=1`.
 3. Gắn tên miền ở *Settings → Custom Domains*; Render tự cấp SSL.
 
 Lưu ý:
 
-- **Gói Free của Render chặn cổng SMTP (25, 465, 587)**, nên phương án A không gửi được mail. Hoặc dùng gói trả phí (`plan: starter` trong `render.yaml`), hoặc giữ gói Free và chuyển form sang phương án B (Google Sheet): đặt `mode: 'gsheet'` trong `js/main.js` và đổi `plan` thành `free`.
+- **Gói Free của Render chặn cổng SMTP (25, 465, 587)**, nên phương án A không gửi được mail. Cần gói trả phí (Starter trở lên), hoặc dùng phương án B (Google Sheet) với Static Site miễn phí.
 - Gói Free cũng tắt máy chủ sau ~15 phút không có truy cập; lượt vào đầu tiên sau đó mất khoảng 1 phút.
 - `TRUST_PROXY=1` để `send.php` lấy đúng IP khách sau proxy của Render; thiếu biến này, mọi khách bị tính chung một IP và giới hạn 3 lần/10 phút áp cho cả website.
 - Mỗi lần push lên nhánh `main`, Render tự build lại. Nhớ chạy `python tools/build.py` và commit các file `*.html` trước khi push.
