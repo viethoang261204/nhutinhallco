@@ -1400,6 +1400,69 @@ a:hover { color: var(--green-btn-dark); }
 
 .more-link { margin: 32px 0 0; }
 
+/* ---------- Mạng lưới HALLCO: bản đồ Google + danh sách văn phòng ---------- */
+.network { display: grid; gap: 24px; }
+.network-map {
+  margin: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--alu-line);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(34, 32, 33, .06), 0 12px 32px -12px rgba(34, 32, 33, .18);
+}
+.network-map-frame { position: relative; aspect-ratio: 4 / 3; background: var(--alu); }
+.network-map-frame iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+  /* My Maps nhúng có thanh tiêu đề đen ~60px phía trên: đẩy lên để khung chỉ còn bản đồ */
+  top: -60px; height: calc(100% + 60px);
+}
+.network-map figcaption {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 8px 16px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--alu-line);
+  font-size: .875rem; color: var(--steel);
+}
+.network-map figcaption a { font-weight: 600; text-decoration: none; white-space: nowrap; }
+.network-map figcaption a:hover { text-decoration: underline; }
+
+.network-list {
+  display: flex; flex-direction: column;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--alu-line);
+  border-radius: 8px;
+}
+.network-list-title {
+  margin: 0 0 4px;
+  font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--steel);
+}
+.network-list ul { margin: 0; padding: 0; list-style: none; }
+.network-list li, .network-home { display: flex; gap: 12px; align-items: flex-start; }
+.network-list li { padding: 12px 0; border-bottom: 1px solid var(--alu-line); }
+.network-list .icon { margin-top: 2px; color: var(--steel); }
+.network-list strong { display: block; color: var(--char); line-height: 1.35; }
+.network-list span { display: block; font-size: .9375rem; color: var(--steel); }
+.network-home {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--green);
+  border-radius: 4px;
+  background: #EAF5EC;
+}
+.network-home .icon { color: var(--green-btn); }
+.network-home strong { color: var(--green-btn-dark); }
+@media (min-width: 960px) {
+  .network { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); align-items: stretch; }
+  .network-map { display: flex; flex-direction: column; }
+  .network-map-frame { flex: 1; aspect-ratio: auto; min-height: 460px; }
+  .network-home { margin-top: auto; }
+  .network-list ul { margin-bottom: 16px; }
+}
+
 /* ---------- Danh sách ---------- */
 .facts { display: grid; margin: 0; padding: 0; list-style: none; }
 .facts li { padding: 14px 0; border-top: 1px solid var(--alu-line); }

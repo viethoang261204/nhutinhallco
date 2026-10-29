@@ -34,7 +34,7 @@
 
   <link rel="preload" href="../assets/fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="../css/style.css?v=5f8ef6af">
+  <link rel="stylesheet" href="../css/style.css?v=eef8675c">
 
   <!-- GA4: dùng cùng mã với _src/layout.html. Thay G-XXXXXXX, bỏ comment khối dưới rồi chạy tools/build.py (xem README) -->
   <!--
@@ -245,22 +245,34 @@
     </section>
 
     <section class="section section-alt" aria-labelledby="global-title">
-      <div class="wrap split split-top">
-        <div>
+      <div class="wrap">
+        <div class="section-head">
           <h2 id="global-title">The HALLCO network worldwide</h2>
-          <p class="lead">HALLCO's regional offices. In Vietnam, Như Tín is your point of contact.</p>
-          <ul class="facts">
-            <li><strong>Headquarters, USA</strong><span>Tillamook, Oregon</span></li>
-            <li><strong>HALLCO Ohio, USA</strong><span>Austintown, Ohio</span></li>
-            <li><strong>HALLCO Europe</strong><span>Froyennes, Belgium</span></li>
-            <li><strong>HALLCO UK</strong><span>Long Eaton, England</span></li>
-            <li><strong>HALLCO South America</strong><span>Itajaí, Brazil</span></li>
-            <li><strong>HALLCO Asia / Australia</strong><span>Mayfield West, New South Wales, Australia</span></li>
-          </ul>
+          <p class="lead">HALLCO's regional offices and dealers on the map. In Vietnam, Như Tín is your point of contact.</p>
         </div>
-        <figure class="media-frame media-frame--light">
-          <img src="../assets/img/hallco-ban-do-toan-cau.webp" srcset="../assets/img/hallco-ban-do-toan-cau-640.webp 640w, ../assets/img/hallco-ban-do-toan-cau.webp 1200w" sizes="(min-width: 900px) 50vw, 100vw" alt="Grey world map showing the continents where HALLCO has locations" width="1200" height="900" loading="lazy" decoding="async">
-        </figure>
+        <div class="network">
+          <figure class="network-map">
+            <div class="network-map-frame">
+              <iframe data-net-map src="https://www.google.com/maps/d/embed?mid=1gyRD4QxxbGwYJ-kb7uFvnlwxWl8W8_E&amp;ll=6.4212,47.6067&amp;z=2" title="Google map: HALLCO offices and dealers worldwide" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <figcaption>
+              <span>Drag, zoom and click a marker for details.</span>
+              <a href="https://www.google.com/maps/d/viewer?mid=1gyRD4QxxbGwYJ-kb7uFvnlwxWl8W8_E&amp;ll=6.4212,47.6067&amp;z=2" target="_blank" rel="noopener">Open full map <span aria-hidden="true">↗</span></a>
+            </figcaption>
+          </figure>
+          <div class="network-list">
+            <p class="network-list-title">Regional offices</p>
+            <ul>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>Headquarters, USA</strong><span>Tillamook, Oregon</span></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>HALLCO Ohio, USA</strong><span>Austintown, Ohio</span></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>HALLCO Europe</strong><span>Froyennes, Belgium</span></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>HALLCO UK</strong><span>Long Eaton, England</span></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>HALLCO South America</strong><span>Itajaí, Brazil</span></div></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>HALLCO Asia / Australia</strong><span>Mayfield West, New South Wales, Australia</span></div></li>
+            </ul>
+            <div class="network-home"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>Như Tín, Vietnam</strong><span>Authorized HALLCO® dealer · 222C Linh Trung, Ho Chi Minh City</span></div></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -397,7 +409,7 @@
     <p class="chat-note">Automated assistant answering from this website. For specific advice, call <a href="tel:+84907917301" data-track="click_call"><span class="nw">0907 917 301</span></a>.</p>
   </section>
 
-  <script src="../js/main.js?v=237a74b7" defer></script>
+  <script src="../js/main.js?v=d4bed5fe" defer></script>
   <script src="../js/chatbot.js?v=5f2a046e" defer></script>
 </body>
 </html>

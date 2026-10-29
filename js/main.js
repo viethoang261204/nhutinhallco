@@ -406,6 +406,12 @@
     });
   }
 
+  /* ---------- Bản đồ mạng lưới HALLCO: khung hẹp (điện thoại) lùi zoom để thấy cả thế giới ---------- */
+  var netMap = document.querySelector('[data-net-map]');
+  if (netMap && netMap.parentNode.clientWidth < 600) {
+    netMap.src = netMap.src.replace(/([?&]z=)\d+/, function (m, key) { return key + '1'; });
+  }
+
   /* ---------- Năm bản quyền ---------- */
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
