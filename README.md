@@ -108,7 +108,7 @@ Tìm và thay các giá trị tạm sau **trong `_src/`**, rồi chạy `python 
 
 | Tìm | Thay bằng | Có trong |
 |---|---|---|
-| `[ĐỊA CHỈ]`, `[EMAIL]`, `[MST]` | Thông tin công ty | `_src/partials/footer.html`, `_src/pages/lien-he.html`, biến `ORG`/`BUSINESS` trong `tools/build.py`; email nhận báo giá đặt ở biến môi trường `MAIL_TO` |
+| `[EMAIL]`, `[MST]` | Thông tin công ty | `_src/partials/footer.html`, `_src/pages/lien-he.html`, biến `ORG`/`BUSINESS` trong `tools/build.py`; email nhận báo giá đặt ở biến môi trường `MAIL_TO` |
 | `https://hallco.nhutin.com` | Tên miền thật (**tên miền này chỉ là giả định**) | Biến `SITE` trong `tools/build.py`, và `robots.txt` |
 | `G-XXXXXXX` | Mã GA4 | `_src/layout.html` |
 
@@ -324,7 +324,7 @@ Mở `http://127.0.0.1:8000`. Server này không nén và không cache, nên t�
 - [ ] Người phụ trách nội dung của Như Tín đọc soát lần cuối
 
 ### Còn lại
-- [ ] Thay `[ĐỊA CHỈ]`, `[EMAIL]`, `[MST]`, `G-XXXXXXX`
+- [ ] Thay `[EMAIL]`, `[MST]`, `G-XXXXXXX`
 - [x] Ảnh trấu và than đã thay bằng ảnh thật (`ung-dung-trau.webp`, `ung-dung-than.webp`). Hai ảnh này khá nhỏ, nếu có bản lớn hơn (từ 1000px) nên thay để nét hơn trên desktop
 - [ ] Xác nhận với HALLCO việc dùng logo, hình ảnh và video của hãng trên trang của đại lý
 - [ ] Xác nhận điều kiện bảo hành cho W Floor, BRUTE, thanh sàn và hệ cố định (trang web hiện chỉ nêu bảo hành i-Series)

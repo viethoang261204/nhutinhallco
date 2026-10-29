@@ -218,7 +218,8 @@ def business(L):
         "telephone": PHONE_TEL,
         "email": "[EMAIL]",
         "taxID": "[MST]",
-        "address": {"@type": "PostalAddress", "streetAddress": "[ĐỊA CHỈ]", "addressCountry": "VN"},
+        "address": {"@type": "PostalAddress", "streetAddress": "222C đường Linh Trung, Phường Linh Xuân",
+                    "addressLocality": "Thành phố Hồ Chí Minh", "addressCountry": "VN"},
         "areaServed": "VN",
     }
 
