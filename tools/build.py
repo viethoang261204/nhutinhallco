@@ -25,6 +25,7 @@ Trong nội dung có thể dùng:
     {{cta: Câu dẫn của dải kêu gọi}}          dải "Nhận báo giá"
     {{include: ten-partial}}                  chèn khối dùng chung ten-partial.html
 """
+import hashlib
 import html
 import json
 import re
@@ -283,6 +284,17 @@ SHARED_ATTR = re.compile(r'((?:src|href|action|poster|srcset)=")((?:assets|css|j
 SRCSET = re.compile(r'srcset="([^"]*)"')
 
 
+# Thêm ?v=<hash nội dung> vào CSS/JS: sửa file là trình duyệt tải bản mới, không kẹt cache cũ
+ASSET_REF = re.compile(r'((?:src|href)=")((?:css|js)/[\w.-]+\.(?:css|js))"')
+
+
+def version_assets(html_text):
+    def add(m):
+        digest = hashlib.md5((ROOT / m.group(2)).read_bytes()).hexdigest()[:8]
+        return f'{m.group(1)}{m.group(2)}?v={digest}"'
+    return ASSET_REF.sub(add, html_text)
+
+
 def relocate(html_text):
     html_text = SHARED_ATTR.sub(r"\1../\2", html_text)
     return SRCSET.sub(lambda m: 'srcset="' + re.sub(r"(,\s*)(assets/)", r"\1../\2", m.group(1)) + '"', html_text)
@@ -369,6 +381,7 @@ def build_lang(lang, sitemap):
             out = out.replace("{{" + k + "}}", v)
         b = out.index("<body>")
         out = out[:b] + protect_terms(out[b:])
+        out = version_assets(out)
         if L["path"]:
             out = relocate(out)
         leftover = re.findall(r"\{\{[^}]+\}\}", out)
