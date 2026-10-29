@@ -621,7 +621,7 @@ a:hover { color: var(--green-btn-dark); }
 .floor[data-phase="4"] .slat { --x: 0; }
 
 .floor-strip { margin-top: 28px; }
-.floor-strip .floor-crate { width: 20px; height: 20px; margin-top: -10px; border-width: 3px; }
+.floor-strip .floor-crate { width: 20px; height: 20px; margin-top: -10px; border-width: 3px; background: #F5C518; }
 @media (min-width: 960px) { .floor-strip { margin-top: 8px; } }
 
 /* Mô phỏng lớn ở khối Cách hoạt động */
