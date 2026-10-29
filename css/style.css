@@ -601,7 +601,7 @@ a:hover { color: var(--green-btn-dark); }
      (không vẽ lại) và được JS kéo lùi đúng một tile khi đi hết để nối liền. */
   right: 0;
   left: calc(-1 * var(--tile));
-  background: url("../assets/img/hang-roi-dai-san.svg") repeat-x;
+  background: url("../assets/img/hang-roi-dai-san.svg?v=2") repeat-x;
   background-size: var(--tile) 100%;
   transform: translateX(var(--lx, 0px));
   transition: transform var(--dur) cubic-bezier(.45, 0, .25, 1);
@@ -621,6 +621,7 @@ a:hover { color: var(--green-btn-dark); }
 .floor[data-phase="4"] .slat { --x: 0; }
 
 .floor-strip { margin-top: 28px; }
+.floor-strip .floor-crate { width: 20px; height: 20px; margin-top: -10px; border-width: 3px; }
 @media (min-width: 960px) { .floor-strip { margin-top: 8px; } }
 
 /* Mô phỏng lớn ở khối Cách hoạt động */
