@@ -1,0 +1,15 @@
+# Ảnh chụp thiết kế (~40MB), chỉ dùng nội bộ
+docs/figma-export/
+
+# Cấu hình chứa mật khẩu nếu điền tay (xem config.php)
+config.local.php
+.env
+
+# Rác hệ điều hành / trình soạn thảo
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+__pycache__/
+*.pyc

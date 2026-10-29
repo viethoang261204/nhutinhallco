@@ -1,0 +1,43 @@
+        <form class="quote-form" action="send.php" method="post" novalidate data-quote-form>
+          <div class="field">
+            <label for="f-name">Họ và tên</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="e-name">
+            <p class="field-error" id="e-name" data-error-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Số điện thoại</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="16" placeholder="0907 917 301" aria-describedby="e-phone">
+            <p class="field-error" id="e-phone" data-error-for="phone"></p>
+          </div>
+          <div class="field">
+            <label for="f-need">Nhu cầu hoặc loại xe</label>
+            <select id="f-need" name="need" required aria-describedby="e-need">
+              <option value="">Chọn nhu cầu gần nhất</option>
+              <option>Lắp hoặc cải tạo rơ-moóc, thùng xe</option>
+              <option>Xe tải thùng</option>
+              <option>Xe chở rác</option>
+              <option>Bồn chứa, hầm chứa cố định</option>
+              <option>Phụ tùng, bảo trì hệ thống đang dùng</option>
+              <option>Khác (ghi rõ ở phần ghi chú)</option>
+            </select>
+            <p class="field-error" id="e-need" data-error-for="need"></p>
+          </div>
+          <div class="field">
+            <label for="f-note">Ghi chú <span class="optional">(không bắt buộc)</span></label>
+            <textarea id="f-note" name="note" rows="3" maxlength="1000" placeholder="Ví dụ: rơ-moóc 13 m, chở dăm gỗ, muốn lắp trong tháng 12"></textarea>
+          </div>
+          <!-- Chống spam: người thật không thấy ô này -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Website</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="started" value="" data-started>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>Gửi yêu cầu báo giá</button>
+          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+        </form>
+
+        <div class="quote-done" hidden tabindex="-1" data-quote-done>
+          <svg class="icon icon-xl" aria-hidden="true"><use href="#i-check"/></svg>
+          <h3>Đã gửi yêu cầu báo giá</h3>
+          <p>Cảm ơn anh chị. Như Tín sẽ gọi lại qua số <strong data-done-phone></strong> trong giờ làm việc.</p>
+        </div>

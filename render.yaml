@@ -1,0 +1,27 @@
+# Render Blueprint: Dashboard → New → Blueprint → chọn repo này.
+# Biến có sync: false sẽ được hỏi khi tạo, không lưu trong repo.
+services:
+  - type: web
+    name: hallco-nhutin
+    runtime: docker
+    plan: starter # gói free chặn cổng SMTP (25/465/587) nên form gửi mail sẽ lỗi; xem README
+    region: singapore
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: TRUST_PROXY
+        value: "1"
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "465"
+      - key: SMTP_SECURE
+        value: ssl
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_FROM_EMAIL
+        sync: false
+      - key: MAIL_TO
+        sync: false

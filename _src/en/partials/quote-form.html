@@ -1,0 +1,45 @@
+        <form class="quote-form" action="send.php" method="post" novalidate data-quote-form>
+          <div class="field">
+            <label for="f-name">Full name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="e-name">
+            <p class="field-error" id="e-name" data-error-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone number</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="20" placeholder="0907 917 301" aria-describedby="e-phone">
+            <p class="field-error" id="e-phone" data-error-for="phone"></p>
+          </div>
+          <div class="field">
+            <label for="f-need">What do you need?</label>
+            <!-- Giá trị gửi đi giữ tiếng Việt để send.php và email về Như Tín giống bản tiếng Việt -->
+            <select id="f-need" name="need" required aria-describedby="e-need">
+              <option value="">Choose the closest option</option>
+              <option value="Lắp hoặc cải tạo rơ-moóc, thùng xe">Fit a new or existing trailer</option>
+              <option value="Xe tải thùng">Box truck</option>
+              <option value="Xe chở rác">Waste collection truck</option>
+              <option value="Bồn chứa, hầm chứa cố định">Stationary bin or bunker</option>
+              <option value="Phụ tùng, bảo trì hệ thống đang dùng">Parts or service for an existing system</option>
+              <option value="Khác (ghi rõ ở phần ghi chú)">Other (tell us in the notes)</option>
+            </select>
+            <p class="field-error" id="e-need" data-error-for="need"></p>
+          </div>
+          <div class="field">
+            <label for="f-note">Notes <span class="optional">(optional)</span></label>
+            <textarea id="f-note" name="note" rows="3" maxlength="1000" placeholder="For example: 13 m trailer, wood chips, want it fitted in December"></textarea>
+          </div>
+          <!-- Chống spam: người thật không thấy ô này -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Website</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="started" value="" data-started>
+          <input type="hidden" name="lang" value="en">
+          <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>Request a quote</button>
+          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+        </form>
+
+        <div class="quote-done" hidden tabindex="-1" data-quote-done>
+          <svg class="icon icon-xl" aria-hidden="true"><use href="#i-check"/></svg>
+          <h3>Quote request sent</h3>
+          <p>Thank you. Như Tín will call you back on <strong data-done-phone></strong> during business hours.</p>
+        </div>

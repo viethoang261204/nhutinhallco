@@ -1,0 +1,174 @@
+{
+  "_ghichu": "Kho kiến thức cho chatbot. 20 câu trong trang Hỏi đáp được tools/build.py tự trích và gộp vào. Ở đây là: từ khóa bổ sung cho các câu hỏi đáp (faq_keywords) và các mục riêng (entries). Mọi nội dung phải khớp với website, không thêm số liệu chưa kiểm chứng. Sửa xong chạy python tools/build.py.",
+
+  "faq_keywords": {
+    "Sàn tự đổ HALLCO® LIVE FLOOR® là gì?": ["san tu do la gi", "live floor la gi", "hoat dong the nao", "nguyen ly", "san truot", "moving floor", "la cai gi"],
+    "Live floor, sàn tự đổ, sàn trượt có phải là một?": ["san truot", "khac nhau", "giong nhau", "co phai la mot"],
+    "Như Tín có phải đại lý chính hãng không?": ["chinh hang", "dai ly", "uy quyen", "hang that", "hang gia", "nhu tin la ai"],
+    "Sàn có dùng để nạp hàng vào thùng được không?": ["nap hang", "dua hang vao", "chat hang", "hai chieu", "dao chieu", "xep hang"],
+    "Lắp sàn tự đổ HALLCO® giá bao nhiêu?": ["gia", "bao nhieu tien", "chi phi", "bao gia", "gia ca", "dat khong", "re khong", "kinh phi", "tien"],
+    "Xe đang chạy có lắp được không?": ["xe cu", "xe dang chay", "cai tao", "lap them", "romooc cu", "thung cu", "xe da qua su dung"],
+    "Lắp đặt mất bao lâu?": ["bao lau", "thoi gian lap", "may ngay", "lap mat", "nhanh khong"],
+    "Cần chuẩn bị thông tin gì để nhận báo giá?": ["chuan bi", "thong tin gi", "can gui gi", "thong so"],
+    "Đầu kéo cần gì để chạy được sàn?": ["dau keo", "bom thuy luc", "pto", "nguon thuy luc", "ap suat", "luu luong", "xe dau keo can gi"],
+    "Bảo trì hệ thống như thế nào?": ["bao tri", "bao duong", "dau thuy luc", "thay loc", "cham soc"],
+    "Xả một chuyến mất bao lâu?": ["xa mat bao lau", "toc do", "nhanh", "bao nhieu phut", "mot chuyen"],
+    "Sàn có xả được trong nhà kho có mái không?": ["nha kho", "mai thap", "trong kho", "day dien", "mai che"],
+    "Bảo hành thế nào?": ["bao hanh", "may nam", "bao lau", "warranty"],
+    "Trường hợp nào không được bảo hành?": ["khong bao hanh", "tu choi bao hanh", "mat bao hanh", "loai tru"],
+    "Phụ tùng thay thế có sẵn không?": ["phu tung", "linh kien", "thay the", "co san", "dat hang"],
+    "Đặt phụ tùng cần cung cấp gì?": ["so seri", "serial", "model", "do thanh san", "dat phu tung"],
+    "Sàn chở được những loại hàng nào?": ["loai hang", "cho duoc gi", "hang gi", "hang roi", "cho hang"],
+    "Tải trọng của sàn ra sao?": ["tai trong", "bao nhieu tan", "cho nang", "tan", "qua tai"],
+    "Chở rác ướt có bị nhỏ nước ra đường không?": ["nuoc ri", "nho nuoc", "chay nuoc", "kin nuoc", "rac uot", "ro ri"],
+    "Hàng có chở chung pallet được không?": ["pallet", "xe nang", "hang chieu ve", "hang kien"]
+  },
+
+  "faq_actions": {
+    "Lắp sàn tự đổ HALLCO® giá bao nhiêu?": "quote",
+    "Xe đang chạy có lắp được không?": "quote",
+    "Cần chuẩn bị thông tin gì để nhận báo giá?": "quote",
+    "Như Tín có phải đại lý chính hãng không?": "contact",
+    "Phụ tùng thay thế có sẵn không?": "contact",
+    "Đặt phụ tùng cần cung cấp gì?": "contact"
+  },
+
+  "entries": [
+    {
+      "id": "lien-he",
+      "q": "Liên hệ Như Tín thế nào?",
+      "keywords": ["lien he", "so dien thoai", "hotline", "goi", "zalo", "sdt", "tu van", "gap nguoi", "nhan vien", "dia chi", "email", "o dau", "van phong"],
+      "a": "Anh chị gọi hoặc nhắn Zalo số <a href=\"tel:+84907917301\" data-track=\"click_call\">0907 917 301</a>, hoặc để lại số điện thoại ở <a href=\"lien-he.html\">trang nhận báo giá</a>, Như Tín sẽ gọi lại trong giờ làm việc.",
+      "actions": "contact"
+    },
+    {
+      "id": "bao-gia",
+      "q": "Tôi muốn nhận báo giá",
+      "keywords": ["nhan bao gia", "muon bao gia", "lay bao gia", "dat mua", "mua", "dat hang", "lap cho toi", "muon lap"],
+      "a": "Anh chị để lại họ tên, số điện thoại và loại xe ở <a href=\"lien-he.html\">trang nhận báo giá</a>. Nếu có sẵn kích thước lòng thùng, loại hàng và khối lượng mỗi chuyến thì báo giá sẽ nhanh hơn.",
+      "actions": "quote",
+      "related": ["Cần chuẩn bị thông tin gì để nhận báo giá?", "Lắp sàn tự đổ HALLCO® giá bao nhiêu?"]
+    },
+    {
+      "id": "i-series",
+      "q": "Bộ dẫn động i-4000 và i-6000 khác nhau thế nào?",
+      "keywords": ["i-4000", "i4000", "i-6000", "i6000", "i series", "iseries", "bo dan dong", "khac nhau", "nen chon", "xi lanh"],
+      "a": "Cả hai đều có 6 xi lanh, đặt dưới sàn, áp suất định mức 3000 psi (207 bar), lưu lượng 30 gpm (khoảng 114 lít/phút). <b>i-4000</b>: tải định mức 35 ton (≈ 31,8 tấn), tốc độ lý thuyết tối đa khoảng 2,3 m/phút. <b>i-6000</b>: piston lớn hơn, tải định mức 45 ton (≈ 40,8 tấn), tốc độ khoảng 1,6 m/phút. Hàng nặng, tải lớn thì nghiêng về i-6000.",
+      "link": "san-pham-i-series.html",
+      "related": ["Đầu kéo cần gì để chạy được sàn?", "Bảo hành thế nào?"]
+    },
+    {
+      "id": "w-floor",
+      "q": "W Floor là gì?",
+      "keywords": ["w floor", "wfloor", "brute", "xe rac", "cho rac", "san kin", "rac sinh hoat"],
+      "a": "W Floor là sàn kín nước suốt chiều dài và chiều rộng thùng, giữ nước rỉ từ rác ướt lại trong xe. Thanh sàn nhôm dày 12,7 mm, từng thanh tháo được bằng 4 bu lông. Đi cùng bộ dẫn động <b>BRUTE</b> đặt phía trước thùng: tải định mức 40 ton, 3 xi lanh, chạy hai chiều, không có ống thủy lực dưới gầm rơ-moóc.",
+      "link": "san-pham-w-floor.html",
+      "related": ["Chở rác ướt có bị nhỏ nước ra đường không?"]
+    },
+    {
+      "id": "accelerator",
+      "q": "Chế độ Accelerator là gì?",
+      "keywords": ["accelerator", "xa nhanh", "hai buoc", "2 buoc", "tang toc", "nhanh hon"],
+      "a": "Accelerator™ là chế độ chu trình hai bước thay vì ba, dùng cho hàng nhẹ. Theo HALLCO, chế độ này xả nhanh hơn tới 30%, đổi qua lại ngay khi đang xả, không cần bơm lớn hơn. Có sẵn trên các bộ dẫn động HALLCO từ i-2000 trở lên.",
+      "link": "cach-hoat-dong.html",
+      "related": ["Xả một chuyến mất bao lâu?"]
+    },
+    {
+      "id": "thanh-san",
+      "q": "Nên chọn loại thanh sàn nào?",
+      "keywords": ["thanh san", "profile", "standard", "triple ridge", "double ridge", "loadkeeper", "ag topseal", "tufdeck", "nlr", "nlr-hd", "nhom", "chon thanh"],
+      "a": "Mỗi loại hàng hợp một profile: <b>Standard</b> cho gỗ, dăm gỗ, mùn cưa; <b>AG Topseal</b> cho nông sản, hàng hạt; <b>Triple Ridge</b> cho rác khô, giấy, phế liệu; <b>NLR</b> cho compost; <b>NLR-HD</b> cho hàng tái chế; <b>Tufdeck</b> cho phế liệu; <b>W Floor</b> cho rác ướt. Như Tín xác nhận profile sau khi xem mẫu hàng.",
+      "link": "san-pham-thanh-san.html",
+      "related": ["Sàn nhựa là gì?", "Sàn chở được những loại hàng nào?"]
+    },
+    {
+      "id": "san-nhua",
+      "q": "Sàn nhựa là gì?",
+      "keywords": ["san nhua", "thanh nhua", "plastic", "shredder"],
+      "a": "HALLCO có thanh sàn nhựa theo thiết kế được cấp bằng sáng chế, thay cho thanh nhôm khi hàng dễ bám dính vào sàn. Thông tin kỹ thuật công khai về dòng này còn ít, Như Tín sẽ hỏi hãng và gửi tài liệu theo loại hàng của anh chị.",
+      "link": "san-pham-thanh-san.html",
+      "actions": "contact"
+    },
+    {
+      "id": "co-dinh",
+      "q": "Có hệ thống cố định cho hầm chứa không?",
+      "keywords": ["co dinh", "ham chua", "bon chua", "container", "kho cap lieu", "lo hoi", "nha may", "bang tai", "cap lieu"],
+      "a": "Có. Sàn LIVE FLOOR® lắp cố định dưới đáy hầm chứa, bồn chứa hoặc container trong nhà máy: xe đổ hàng vào, sàn đưa hàng ra băng tải đều đặn. Rất hợp kho cấp liệu lò hơi đốt dăm gỗ, trấu, vỏ hạt điều.",
+      "link": "san-pham-he-thong-co-dinh.html",
+      "related": ["Tôi muốn nhận báo giá"]
+    },
+    {
+      "id": "dam-go",
+      "q": "Chở dăm gỗ, mùn cưa thì dùng cấu hình nào?",
+      "keywords": ["dam go", "go dam", "mun cua", "go", "vo cay", "vien nen"],
+      "a": "Với gỗ, dăm gỗ, mùn cưa, HALLCO gợi ý bộ dẫn động <b>i-4000 hoặc i-6000</b> (chọn theo tải trọng) với thanh <b>Standard</b>. Xe xả ngay tại bãi, kể cả trong kho có mái; bạt quét đáy gom nốt dăm vụn cuối thùng.",
+      "link": "ung-dung.html#dam-go"
+    },
+    {
+      "id": "trau-nong-san",
+      "q": "Chở trấu, nông sản thì sao?",
+      "keywords": ["trau", "nong san", "ngo", "khoai mi", "san lat", "lua", "hat", "thuc an chan nuoi", "cam", "ddg", "kho dau"],
+      "a": "Nông sản và hàng hạt: HALLCO gợi ý <b>i-4000 với thanh AG Topseal</b> để hạn chế hàng lọt khe và hao hụt. Trấu rất nhẹ nên Như Tín sẽ xem mẫu hàng và xe trước khi chốt cấu hình.",
+      "link": "ung-dung.html#trau"
+    },
+    {
+      "id": "vo-dieu",
+      "q": "Chở vỏ hạt điều được không?",
+      "keywords": ["vo hat dieu", "vo dieu", "ba dieu", "dieu", "sinh khoi", "nhien lieu"],
+      "a": "Được. Bã vỏ hạt điều là mặt hàng chính của Như Tín, giao bằng đội xe chuyên dụng tới lò hơi công nghiệp. HALLCO không công bố cấu hình riêng cho loại hàng này, Như Tín tư vấn dựa trên kinh nghiệm vận hành thực tế.",
+      "link": "ung-dung.html#vo-hat-dieu"
+    },
+    {
+      "id": "than",
+      "q": "Chở than được không?",
+      "keywords": ["than", "than da", "than cam", "than cuc"],
+      "a": "Được. Than nặng nên tải mỗi chuyến cao, bộ dẫn động cần đủ lực và không được vượt tải định mức. HALLCO không có cấu hình công bố riêng cho than, Như Tín chọn theo tải trọng thực tế, thường cân nhắc i-6000.",
+      "link": "ung-dung.html#than"
+    },
+    {
+      "id": "rac-phe-lieu",
+      "q": "Chở rác, phế liệu dùng loại nào?",
+      "keywords": ["rac", "phe lieu", "tai che", "lop xe", "giay", "bia", "compost", "phan huu co", "kim loai"],
+      "a": "Rác ướt: <b>BRUTE 8500 + W Floor</b> kín nước. Rác khô, giấy: i-4000 hoặc i-6000 với <b>Triple Ridge</b>. Hàng tái chế: i-4000 với <b>NLR-HD</b>. Phế liệu: i-4000 với <b>Tufdeck</b> hoặc Triple Ridge. Compost: i-4000 với <b>NLR</b>.",
+      "link": "ung-dung.html#rac-thai"
+    },
+    {
+      "id": "nang-ben",
+      "q": "So với xe nâng ben thì sao?",
+      "keywords": ["nang ben", "xe ben", "tipper", "lat thung", "so sanh", "hon gi"],
+      "a": "Sàn tự đổ xả với thùng nằm ngang nên vào được kho mái thấp, gần đường dây điện, nền không bằng phẳng; xả từng phần được, nạp hàng được (bộ dẫn động hai chiều) và có tùy chọn sàn kín nước. Nâng ben vẫn hợp lý cho nhiều việc khác.",
+      "link": "cach-hoat-dong.html",
+      "related": ["Sàn có xả được trong nhà kho có mái không?"]
+    },
+    {
+      "id": "loi-ich",
+      "q": "Lắp sàn tự đổ được lợi gì?",
+      "keywords": ["loi ich", "loi gi", "co loi", "duoc gi", "tai sao", "vi sao", "co nen", "dang dau tu", "hieu qua", "tiet kiem", "uu diem"],
+      "a": "Xe đến bãi là xả, không chờ máy xúc hay người cào, nên chạy thêm được chuyến. Một tài xế tự xả hết chuyến, bớt chi phí bốc xếp. Cải tạo ngay trên xe đang chạy, không phải mua xe mới. Thùng nằm ngang nên nhận được hàng ở nhiều điểm hơn và không có chuyện lật ben.",
+      "link": "index.html#loi-ich",
+      "related": ["Lắp sàn tự đổ HALLCO® giá bao nhiêu?", "Xe đang chạy có lắp được không?"]
+    },
+    {
+      "id": "quy-trinh",
+      "q": "Quy trình lắp đặt gồm những bước nào?",
+      "keywords": ["quy trinh", "cac buoc", "khao sat", "lap dat nhu the nao", "ban giao", "lam the nao"],
+      "a": "Bốn bước: <b>1. Khảo sát</b> khung xe, thùng, nguồn thủy lực và loại hàng. <b>2. Đề xuất và báo giá</b> kèm lịch thi công. <b>3. Lắp đặt</b> theo quy trình của HALLCO. <b>4. Bàn giao</b>, hướng dẫn vận hành, bảo trì và đăng ký bảo hành với hãng trong 10 ngày.",
+      "link": "about.html",
+      "related": ["Lắp đặt mất bao lâu?", "Tôi muốn nhận báo giá"]
+    },
+    {
+      "id": "hallco",
+      "q": "HALLCO là hãng nào?",
+      "keywords": ["hallco", "hang nao", "cua nuoc nao", "xuat xu", "my", "nguon goc", "thuong hieu"],
+      "a": "HALLCO Industries, Inc. là hãng Mỹ đã phát minh ra sàn chuyển động, nộp bằng sáng chế đầu tiên năm 1968. Trụ sở ở Tillamook, Oregon; tập đoàn có 5 công ty thành viên, cơ sở ở 4 châu lục và 2 nhà máy sản xuất.",
+      "link": "about.html"
+    },
+    {
+      "id": "nhu-tin",
+      "q": "Như Tín là công ty nào?",
+      "keywords": ["nhu tin", "cong ty", "ve nhu tin", "gioi thieu", "kinh nghiem"],
+      "a": "Công ty Cổ phần Như Tín hoạt động trong vận tải hàng rời từ năm 2010, cung cấp nhiên liệu sinh khối từ bã vỏ hạt điều cho lò hơi công nghiệp, và là đại lý ủy quyền HALLCO® tại Việt Nam.",
+      "link": "about.html"
+    }
+  ]
+}

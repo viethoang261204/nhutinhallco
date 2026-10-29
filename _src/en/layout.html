@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  {{robots}}
+  <link rel="canonical" href="{{canonical}}">
+  {{hreflang}}
+  <meta name="theme-color" content="#0B4D2A">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="vi_VN">
+  <meta property="og:site_name" content="Như Tín – Authorized HALLCO® dealer">
+  <meta property="og:title" content="{{og_title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{og_image}}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{og_title}}">
+  <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:image" content="{{og_image}}">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="assets/fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+{{preloads}}
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GA4: dùng cùng mã với _src/layout.html. Thay G-XXXXXXX, bỏ comment khối dưới rồi chạy tools/build.py (xem README) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  -->
+
+  <script type="application/ld+json">
+{{jsonld}}
+  </script>
+</head>
+<body>
+  <!-- Trang này được tạo từ _src/en/ bằng tools/build.py. Sửa trong _src/en/ để thay đổi không bị ghi đè. -->
+  <a class="skip-link" href="#noi-dung">Skip to content</a>
+
+{{sprite}}
+  <header class="site-header" data-header>
+    <div class="wrap header-row">
+      <a class="brand" href="index.html" aria-label="Như Tín, authorized HALLCO LIVE FLOOR dealer, home">
+        <img class="brand-nhutin" src="assets/img/nhutin-logo-trim.webp" alt="Như Tín" width="283" height="68">
+        <span class="brand-sep" aria-hidden="true"></span>
+        <span class="brand-dealer">
+          <span class="brand-dealer-label">Authorized dealer</span>
+          <img class="brand-hallco" src="assets/img/hallco-logo-live-floor-320.webp" alt="HALLCO LIVE FLOOR" width="320" height="80">
+        </span>
+      </a>
+
+      <nav class="site-nav" id="menu" aria-label="Main menu" data-nav>
+        <ul class="nav-list">
+{{nav}}
+        </ul>
+        <a class="btn btn-primary nav-cta" href="lien-he.html">Get a quote</a>
+      </nav>
+
+      {{lang_switch}}
+
+      <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" data-menu-toggle>
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="noi-dung">
+{{crumbs}}
+{{content}}
+  </main>
+
+{{footer}}
+
+{{float}}
+
+{{chatbot}}
+
+  <script src="js/main.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>

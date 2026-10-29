@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /send.php
+Disallow: /lib/
+Disallow: /docs/
+Disallow: /google-apps-script/
+Disallow: /_src/
+Disallow: /tools/
+Disallow: /404.html
+
+# TODO: đổi tên miền thật
+Sitemap: https://hallco.nhutin.com/sitemap.xml

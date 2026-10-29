@@ -1,0 +1,51 @@
+        <div class="how-grid">
+          <ol class="how-steps" data-steps>
+            <li class="how-step" data-step="1">
+              <button type="button" class="how-step-btn" data-step-btn="1">
+                <span class="how-num">01</span>
+                <span class="how-text">
+                  <span class="how-title">Cả sàn cùng tiến</span>
+                  <span class="how-desc">Ba nhóm thanh sàn cùng chạy về phía cửa sau. Hàng nằm trên sàn đi theo một đoạn.</span>
+                </span>
+              </button>
+            </li>
+            <li class="how-step" data-step="2">
+              <button type="button" class="how-step-btn" data-step-btn="2">
+                <span class="how-num">02</span>
+                <span class="how-text">
+                  <span class="how-title">Lùi về từng nhóm</span>
+                  <span class="how-desc">Từng nhóm lần lượt rút về chỗ cũ. Mỗi lúc chỉ một phần ba sàn chuyển động, hai phần còn lại giữ hàng đứng yên.</span>
+                </span>
+              </button>
+            </li>
+            <li class="how-step" data-step="3">
+              <button type="button" class="how-step-btn" data-step-btn="3">
+                <span class="how-num">03</span>
+                <span class="how-text">
+                  <span class="how-title">Hàng ra khỏi thùng</span>
+                  <span class="how-desc">Chu kỳ lặp lại liên tục, hàng nhích dần ra cửa sau cho đến khi thùng trống. Đảo chiều thì sàn dùng để nạp hàng vào.</span>
+                </span>
+              </button>
+            </li>
+          </ol>
+
+          <figure class="how-sim">
+            <div class="floor floor-sim" data-floor data-floor-steps aria-hidden="true">
+              <div class="floor-slats">
+                <span class="slat g0"></span><span class="slat g1"></span><span class="slat g2"></span>
+                <span class="slat g0"></span><span class="slat g1"></span><span class="slat g2"></span>
+                <span class="slat g0"></span><span class="slat g1"></span><span class="slat g2"></span>
+                <span class="slat g0"></span><span class="slat g1"></span><span class="slat g2"></span>
+              </div>
+              <div class="floor-load"></div>
+              <span class="floor-crate" data-crate></span>
+              <span class="floor-door">Cửa sau</span>
+            </div>
+            <figcaption class="how-legend">
+              <span><i class="swatch swatch-moving"></i>Thanh sàn đang chạy</span>
+              <span><i class="swatch swatch-idle"></i>Thanh sàn đứng yên</span>
+              <span><i class="swatch swatch-crate"></i>Một kiện hàng để theo dõi</span>
+            </figcaption>
+            <p class="visually-hidden" aria-live="polite" data-step-live></p>
+          </figure>
+        </div>

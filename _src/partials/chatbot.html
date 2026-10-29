@@ -1,0 +1,29 @@
+  <section class="chatbot" id="chatbot" role="dialog" aria-labelledby="chatbot-title" hidden>
+    <header class="chat-head">
+      <span class="chat-avatar">
+        <img src="assets/img/nhutinlogo-220.webp" srcset="assets/img/nhutinlogo-220.webp 1x, assets/img/nhutinlogo-440.webp 2x" alt="" width="44" height="44" decoding="async">
+      </span>
+      <div class="chat-head-text">
+        <h2 class="chat-title" id="chatbot-title">Trợ lý Như Tín</h2>
+        <p class="chat-status"><span class="chat-dot" aria-hidden="true"></span>Trả lời ngay từ tài liệu HALLCO®</p>
+      </div>
+      <button class="chat-icon-btn" type="button" data-chat-reset title="Bắt đầu lại">
+        <svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>
+        <span class="visually-hidden">Xóa cuộc trò chuyện</span>
+      </button>
+      <button class="chat-icon-btn" type="button" data-chat-close>
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        <span class="visually-hidden">Đóng trợ lý</span>
+      </button>
+    </header>
+    <div class="chat-log" data-chat-log role="log" aria-live="polite" aria-label="Nội dung trò chuyện"></div>
+    <form class="chat-form" data-chat-form autocomplete="off">
+      <label class="visually-hidden" for="chat-input">Câu hỏi của anh chị</label>
+      <input id="chat-input" type="text" name="q" maxlength="200" placeholder="Hỏi về giá, bảo hành, loại hàng…" data-chat-input>
+      <button class="chat-send" type="submit">
+        <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
+        <span class="visually-hidden">Gửi</span>
+      </button>
+    </form>
+    <p class="chat-note">Trợ lý tự động, trả lời theo tài liệu trên website. Cần tư vấn cụ thể, gọi <a href="tel:+84907917301" data-track="click_call">0907 917 301</a>.</p>
+  </section>

@@ -1,0 +1,12 @@
+# Chỉ đưa lên máy chủ những gì website cần chạy
+.git
+.gitignore
+.dockerignore
+Dockerfile
+render.yaml
+README.md
+*.md
+_src/
+tools/
+docs/
+google-apps-script/

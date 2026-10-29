@@ -1,0 +1,51 @@
+        <div class="how-grid">
+          <ol class="how-steps" data-steps>
+            <li class="how-step" data-step="1">
+              <button type="button" class="how-step-btn" data-step-btn="1">
+                <span class="how-num">01</span>
+                <span class="how-text">
+                  <span class="how-title">The whole floor moves</span>
+                  <span class="how-desc">All three slat groups travel towards the rear door together. The load on top rides along one stroke.</span>
+                </span>
+              </button>
+            </li>
+            <li class="how-step" data-step="2">
+              <button type="button" class="how-step-btn" data-step-btn="2">
+                <span class="how-num">02</span>
+                <span class="how-text">
+                  <span class="how-title">Groups return one by one</span>
+                  <span class="how-desc">Each group slides back in turn. Only a third of the floor moves at a time, so the other two thirds hold the load in place.</span>
+                </span>
+              </button>
+            </li>
+            <li class="how-step" data-step="3">
+              <button type="button" class="how-step-btn" data-step-btn="3">
+                <span class="how-num">03</span>
+                <span class="how-text">
+                  <span class="how-title">The load moves out</span>
+                  <span class="how-desc">The cycle repeats and the load creeps out of the rear door until the box is empty. Reverse it and the floor pulls cargo in.</span>
+                </span>
+              </button>
+            </li>
+          </ol>
+
+          <figure class="how-sim">
+            <div class="floor floor-sim" data-floor data-floor-steps aria-hidden="true">
+              <div class="floor-slats">
+                <span class="slat g0"></span><span class="slat g1"></span><span class="slat g2"></span>
+                <span class="slat g0"></span><span class="slat g1"></span><span class="slat g2"></span>
+                <span class="slat g0"></span><span class="slat g1"></span><span class="slat g2"></span>
+                <span class="slat g0"></span><span class="slat g1"></span><span class="slat g2"></span>
+              </div>
+              <div class="floor-load"></div>
+              <span class="floor-crate" data-crate></span>
+              <span class="floor-door">Rear door</span>
+            </div>
+            <figcaption class="how-legend">
+              <span><i class="swatch swatch-moving"></i>Slats moving</span>
+              <span><i class="swatch swatch-idle"></i>Slats at rest</span>
+              <span><i class="swatch swatch-crate"></i>One parcel to follow</span>
+            </figcaption>
+            <p class="visually-hidden" aria-live="polite" data-step-live></p>
+          </figure>
+        </div>

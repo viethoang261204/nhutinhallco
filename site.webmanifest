@@ -1,0 +1,11 @@
+{
+  "name": "HALLCO LIVE FLOOR – Như Tín",
+  "short_name": "HALLCO Như Tín",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0B4D2A",
+  "background_color": "#FFFFFF",
+  "display": "browser"
+}
