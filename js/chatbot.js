@@ -67,13 +67,13 @@
         'What is the difference between the i-4000 and the i-6000?',
         'What cargo can the floor carry?',
         'What is the warranty?',
-        'How do I contact Như Tín?'
+        'How do I contact Nhu Tin?'
       ],
-      greeting: 'Hello, I am the automated assistant of <b>Như Tín</b>, the authorized HALLCO® LIVE FLOOR® dealer in Vietnam. ' +
+      greeting: 'Hello, I am the automated assistant of <b>Nhu Tin</b>, the authorized HALLCO® LIVE FLOOR® dealer in Vietnam. ' +
         'Ask me about price, installation, specifications, warranty or cargo and I will answer straight from the factory documents.',
-      fallback: 'I don\'t have an exact answer to that yet. Rather than guess, please talk to a Như Tín technician directly, ' +
+      fallback: 'I don\'t have an exact answer to that yet. Rather than guess, please talk to a Nhu Tin technician directly, ' +
         'or try asking another way (for example: <i>price</i>, <i>warranty</i>, <i>retrofit</i>, <i>wood chips</i>).',
-      phone: 'I am an automated assistant, so I can\'t take phone numbers in the chat. Please enter yours in the <a href="lien-he">quote form</a> (it takes 30 seconds) and a Như Tín technician will call you back during business hours.',
+      phone: 'I am an automated assistant, so I can\'t take phone numbers in the chat. Please enter yours in the <a href="lien-he">quote form</a> (it takes 30 seconds) and a Nhu Tin technician will call you back during business hours.',
       hello: 'Hello! Which truck are you thinking of fitting, and what cargo does it carry? Or pick a suggested question below.',
       thanks: 'You\'re welcome. For a quote for your own truck, call or message us on Zalo at <b>0907 917 301</b>.',
       helloRe: / (hello|hi|hey|good morning|good afternoon|xin chao|chao) /,

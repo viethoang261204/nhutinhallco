@@ -4,7 +4,7 @@
   "faq_keywords": {
     "What is a HALLCO® LIVE FLOOR® moving floor?": ["live floor", "moving floor", "how does it work", "principle", "self unloading"],
     "Are a live floor, a moving floor and a self-unloading floor the same thing?": ["same thing", "difference", "different names", "self unloading floor"],
-    "Is Như Tín an authorized dealer?": ["authorized", "authorised", "dealer", "genuine", "official", "distributor", "fake"],
+    "Is Nhu Tin an authorized dealer?": ["authorized", "authorised", "dealer", "genuine", "official", "distributor", "fake"],
     "Can the floor be used to load cargo into the box?": ["load cargo", "loading", "two way", "reverse", "pull in"],
     "How much does a HALLCO® moving floor cost?": ["price", "cost", "how much", "quote price", "expensive", "cheap", "budget", "pricing"],
     "Can you fit a truck that is already in service?": ["retrofit", "used truck", "existing truck", "old truck", "old trailer", "existing trailer", "convert"],
@@ -28,7 +28,7 @@
     "How much does a HALLCO® moving floor cost?": "quote",
     "Can you fit a truck that is already in service?": "quote",
     "What information do I need for a quote?": "quote",
-    "Is Như Tín an authorized dealer?": "contact",
+    "Is Nhu Tin an authorized dealer?": "contact",
     "Are spare parts available?": "contact",
     "What do I need to order parts?": "contact"
   },
@@ -36,9 +36,9 @@
   "entries": [
     {
       "id": "lien-he",
-      "q": "How do I contact Như Tín?",
+      "q": "How do I contact Nhu Tin?",
       "keywords": ["contact", "phone", "phone number", "hotline", "call", "zalo", "talk to", "sales", "address", "email", "where are you", "office", "whatsapp"],
-      "a": "Call or message us on Zalo at <a href=\"tel:+84907917301\" data-track=\"click_call\">0907 917 301</a> (from abroad: +84 907 917 301), or leave your number on the <a href=\"lien-he.html\">quote page</a> and Như Tín will call you back during business hours.",
+      "a": "Call or message us on Zalo at <a href=\"tel:+84907917301\" data-track=\"click_call\">0907 917 301</a> (from abroad: +84 907 917 301), or leave your number on the <a href=\"lien-he.html\">quote page</a> and Nhu Tin will call you back during business hours.",
       "actions": "contact"
     },
     {
@@ -77,7 +77,7 @@
       "id": "thanh-san",
       "q": "Which floor slat should I choose?",
       "keywords": ["slat", "slats", "profile", "standard", "triple ridge", "double ridge", "loadkeeper", "ag topseal", "topseal", "tufdeck", "nlr", "nlrhd", "nlr hd", "aluminium", "aluminum", "which slat"],
-      "a": "Each cargo suits a profile: <b>Standard</b> for wood, wood chips and sawdust; <b>AG Topseal</b> for produce and grain; <b>Triple Ridge</b> for dry waste, paper and scrap; <b>NLR</b> for compost; <b>NLR-HD</b> for recyclables; <b>Tufdeck</b> for scrap; <b>W Floor</b> for wet waste. Như Tín confirms the profile after seeing a sample.",
+      "a": "Each cargo suits a profile: <b>Standard</b> for wood, wood chips and sawdust; <b>AG Topseal</b> for produce and grain; <b>Triple Ridge</b> for dry waste, paper and scrap; <b>NLR</b> for compost; <b>NLR-HD</b> for recyclables; <b>Tufdeck</b> for scrap; <b>W Floor</b> for wet waste. Nhu Tin confirms the profile after seeing a sample.",
       "link": "san-pham-thanh-san.html",
       "related": ["What is the plastic floor?", "What cargo can the floor carry?"]
     },
@@ -85,7 +85,7 @@
       "id": "san-nhua",
       "q": "What is the plastic floor?",
       "keywords": ["plastic floor", "plastic slat", "plastic", "shredder"],
-      "a": "HALLCO makes a plastic floor slat to a patented design, used instead of aluminium when cargo tends to stick to the floor. Little technical information is public yet, so Như Tín will ask the factory and send you documents for your cargo.",
+      "a": "HALLCO makes a plastic floor slat to a patented design, used instead of aluminium when cargo tends to stick to the floor. Little technical information is public yet, so Nhu Tin will ask the factory and send you documents for your cargo.",
       "link": "san-pham-thanh-san.html",
       "actions": "contact"
     },
@@ -108,21 +108,21 @@
       "id": "trau-nong-san",
       "q": "What about rice husk and produce?",
       "keywords": ["rice husk", "husk", "rice", "produce", "corn", "maize", "cassava", "grain", "agricultural", "animal feed", "feed", "bran", "ddg"],
-      "a": "For produce and grain, HALLCO suggests the <b>i-4000 with AG Topseal slats</b> to limit leakage and product loss. Rice husk is very light, so Như Tín looks at a sample and the truck before confirming the configuration.",
+      "a": "For produce and grain, HALLCO suggests the <b>i-4000 with AG Topseal slats</b> to limit leakage and product loss. Rice husk is very light, so Nhu Tin looks at a sample and the truck before confirming the configuration.",
       "link": "ung-dung.html#trau"
     },
     {
       "id": "vo-dieu",
       "q": "Can it carry cashew nut shells?",
       "keywords": ["cashew", "cashew shells", "cashew nut", "nut shells", "shells", "fuel"],
-      "a": "Yes. Cashew nut shell residue is Như Tín's own core cargo, delivered by our dedicated fleet to industrial boilers. HALLCO has no published configuration for it, so Như Tín advises from real operating experience.",
+      "a": "Yes. Cashew nut shell residue is Nhu Tin's own core cargo, delivered by our dedicated fleet to industrial boilers. HALLCO has no published configuration for it, so Nhu Tin advises from real operating experience.",
       "link": "ung-dung.html#vo-hat-dieu"
     },
     {
       "id": "than",
       "q": "Can it carry coal?",
       "keywords": ["coal", "lump coal", "fine coal"],
-      "a": "Yes. Coal is heavy, so the payload per trip is high: the drive needs enough force and must not exceed its rated load. HALLCO has no published configuration for coal; Như Tín chooses by actual payload, usually considering the i-6000.",
+      "a": "Yes. Coal is heavy, so the payload per trip is high: the drive needs enough force and must not exceed its rated load. HALLCO has no published configuration for coal; Nhu Tin chooses by actual payload, usually considering the i-6000.",
       "link": "ung-dung.html#than"
     },
     {
@@ -144,7 +144,7 @@
       "id": "loi-ich",
       "q": "What are the benefits of a moving floor?",
       "keywords": ["benefits", "advantages", "why", "worth it", "roi", "save", "savings", "pros"],
-      "a": "The truck unloads as soon as it arrives, with no wait for a loader or raking crew, so it runs more trips. One driver unloads alone, cutting handling costs. Như Tín retrofits trucks you already run, so there is no new vehicle to buy. And a level box delivers to more sites with no tip-over risk.",
+      "a": "The truck unloads as soon as it arrives, with no wait for a loader or raking crew, so it runs more trips. One driver unloads alone, cutting handling costs. Nhu Tin retrofits trucks you already run, so there is no new vehicle to buy. And a level box delivers to more sites with no tip-over risk.",
       "link": "index.html#loi-ich",
       "related": ["How much does a HALLCO® moving floor cost?", "Can you fit a truck that is already in service?"]
     },
@@ -165,9 +165,9 @@
     },
     {
       "id": "nhu-tin",
-      "q": "Who is Như Tín?",
+      "q": "Who is Nhu Tin?",
       "keywords": ["nhu tin", "company", "about you", "who are you", "experience"],
-      "a": "Như Tín Joint Stock Company has worked in bulk haulage since 2010, supplies biomass fuel made from cashew nut shell residue to industrial boilers, and is the authorized HALLCO® dealer in Vietnam.",
+      "a": "Nhu Tin Corporation has worked in bulk haulage since 2010, supplies biomass fuel made from cashew nut shell residue to industrial boilers, and is the authorized HALLCO® dealer in Vietnam.",
       "link": "about.html"
     }
   ]

@@ -79,7 +79,7 @@ LANGS = {
         "crumbs_label": "Breadcrumb",
         "sub_toggle": "Open the {} submenu",
         "switch_label": "Choose language",
-        "business": "Như Tín – Authorized HALLCO® dealer in Vietnam",
+        "business": "Nhu Tin – Authorized HALLCO® dealer in Vietnam",
         "category": "Moving floor systems for bulk haulage",
         "nav": [
             ("cach-hoat-dong", "cach-hoat-dong.html", "How it works", None),
@@ -89,7 +89,7 @@ LANGS = {
             ("ung-dung", "ung-dung.html", "Applications", None),
             ("bao-hanh", "bao-hanh.html", "Warranty", None),
             ("hoi-dap", "hoi-dap.html", "FAQ", None),
-            ("about", "about.html", "About Như Tín", None),
+            ("about", "about.html", "About Nhu Tin", None),
         ],
     },
 }
@@ -198,7 +198,7 @@ ORG = {
     "@type": "Organization",
     "@id": f"{SITE}/#org",
     "name": "Công ty Cổ phần Như Tín",
-    "alternateName": "NHUTIN",
+    "alternateName": ["NHUTIN", "Nhu Tin Corporation"],
     "url": "https://nhutin.com",
     "logo": f"{SITE}/assets/img/nhutin-logo.png",
     "foundingDate": "2010",
@@ -224,7 +224,9 @@ def business(L):
 
 
 def schema(L, meta, body, filename, url):
-    graph = [ORG]
+    # Trang tiếng Anh: tên công ty viết không dấu
+    org = ORG if not L["path"] else dict(ORG, name="Nhu Tin Corporation", alternateName=["NHUTIN", "Công ty Cổ phần Như Tín"])
+    graph = [org]
     kinds = meta.get("schema", [])
     if "business" in kinds:
         graph.append(business(L))
