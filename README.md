@@ -53,6 +53,14 @@ Mọi số liệu kỹ thuật lấy từ tài liệu chính thức của HALLCO
 └── .htaccess               Nén, cache, trang 404, chặn file nhạy cảm (Apache)
 ```
 
+## Đường dẫn không đuôi .html
+
+Mọi link trong trang dùng đường dẫn không đuôi: `/san-pham`, `/bao-hanh`, `/en/lien-he`; trang chủ là `/` và `/en/`. File vẫn tên `san-pham.html`; `tools/build.py` tự bỏ đuôi khi build (link, canonical, hreflang, sitemap, dữ liệu cấu trúc, link trong chatbot). Render Static Site tự trả `san-pham.html` cho `/san-pham`; khi chạy Apache, `.htaccess` làm việc này và chuyển link cũ `.html` sang bản không đuôi. Trong `_src/` cứ viết link như cũ (`san-pham.html`).
+
+## Trang quản trị (/admin)
+
+`admin/` là giao diện quản trị (đăng nhập ở `/admin/login`): yêu cầu báo giá, khách hàng, bảo hành, sản phẩm, trợ lý & hỏi đáp, trang & SEO, thư viện ảnh, người dùng, nhật ký, cài đặt. **Mới là giao diện, chưa nối máy chủ:** dữ liệu mẫu và mọi thay đổi chỉ lưu trong trình duyệt (localStorage), đăng nhập chỉ kiểm tra phía trình duyệt nên chưa bảo mật. Kho trợ lý đọc từ `js/chatbot-kb.js`, tiêu đề/mô tả SEO đọc trực tiếp từ các trang.
+
 ## Sửa nội dung
 
 Header, menu và footer giống nhau trên 13 trang, nên chúng được viết **một lần** trong `_src/` và ghép lại bằng script:
@@ -266,7 +274,7 @@ Sau khi lên mạng: gửi `sitemap.xml` trong Google Search Console và kiểm 
 php -S 127.0.0.1:8000
 ```
 
-Mở `http://127.0.0.1:8000`. Server này không nén và không cache, nên tốc độ đo được sẽ thấp hơn trên hosting thật.
+Mở `http://127.0.0.1:8000`. Server này không nén và không cache, nên tốc độ đo được sẽ thấp hơn trên hosting thật. Server PHP dựng sẵn không hiểu đường dẫn không đuôi (`/san-pham`) và `/admin`; muốn bấm link như trên Render, chạy kèm router mô phỏng hoặc dùng Apache.
 
 ## 6. Checklist trước khi bàn giao
 

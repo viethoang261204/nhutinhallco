@@ -255,7 +255,7 @@
     counters.forEach(function (el) { countIO.observe(el); });
   }
 
-  /* ---------- Điền sẵn nhu cầu từ liên kết, ví dụ lien-he.html?nhu-cau=xe-rac ---------- */
+  /* ---------- Điền sẵn nhu cầu từ liên kết, ví dụ lien-he?nhu-cau=xe-rac ---------- */
   var NEED_FROM_LINK = {
     'romooc': 'Lắp hoặc cải tạo rơ-moóc, thùng xe',
     'xe-tai': 'Xe tải thùng',

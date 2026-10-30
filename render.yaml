@@ -27,6 +27,10 @@ services:
         name: Cache-Control
         value: public, max-age=2592000
     routes:
+      # Trang tiếng Anh luôn có dấu "/" cuối để link tương đối đúng thư mục en/
+      - type: redirect
+        source: /en
+        destination: /en/
       # Không công khai mã nguồn trang, công cụ build và file PHP
       - type: rewrite
         source: /_src/*
@@ -49,3 +53,10 @@ services:
       - type: rewrite
         source: /config.php
         destination: /404.html
+      # Trang quản trị: /admin và /admin/login (giao diện, chưa nối máy chủ)
+      - type: rewrite
+        source: /admin
+        destination: /admin/index.html
+      - type: rewrite
+        source: /admin/login
+        destination: /admin/login.html

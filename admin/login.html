@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng nhập — HALLCO Admin</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#073820">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/admin/css/fonts.css?v=1">
+  <link rel="stylesheet" href="/admin/css/admin.css?v=1">
+</head>
+<body>
+  <main class="login">
+    <section class="login-art" style="background-image:url('/assets/img/hero-truck-poster.webp')" aria-hidden="true">
+      <h2>Quản trị HALLCO® LIVE FLOOR®</h2>
+      <p>Yêu cầu báo giá, khách hàng, bảo hành và nội dung website của Như Tín, đại lý ủy quyền HALLCO tại Việt Nam.</p>
+    </section>
+
+    <section class="login-form">
+      <div class="login-box">
+        <div class="logos">
+          <img src="/assets/img/nhutin-logo-trim.webp" alt="Như Tín" width="120" height="30">
+          <span class="sep" aria-hidden="true"></span>
+          <img src="/assets/img/hallco-logo-live-floor-320.webp" alt="HALLCO LIVE FLOOR" width="130" height="30">
+        </div>
+        <h1>Đăng nhập</h1>
+        <p class="lead">Dành cho nhân viên Như Tín.</p>
+
+        <div class="login-err" role="alert" data-err hidden></div>
+        <form data-login novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" class="input" type="email" name="email" autocomplete="username" required>
+          </div>
+          <div class="field">
+            <label for="password">Mật khẩu</label>
+            <div class="pw">
+              <input id="password" class="input" type="password" name="password" autocomplete="current-password" required>
+              <button class="icon-btn" type="button" data-toggle aria-label="Hiện mật khẩu" aria-pressed="false">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="field" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <label class="check"><input type="checkbox" name="remember" checked>Ghi nhớ đăng nhập</label>
+            <a href="#" class="small" data-forgot>Quên mật khẩu?</a>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
+        </form>
+
+        <p class="login-foot"><a href="/">← Về website</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/admin/js/data.js?v=1"></script>
+  <script>
+    (function () {
+      'use strict';
+      var DEMO_PASSWORD = 'hallco2026';
+      var form = document.querySelector('[data-login]');
+      var err = document.querySelector('[data-err]');
+      var email = document.getElementById('email');
+      var pw = document.getElementById('password');
+
+      // Đã đăng nhập thì vào thẳng
+      if (localStorage.getItem('hallco_admin_session')) location.replace('/admin' + nextHash());
+
+      function nextHash() {
+        var n = new URLSearchParams(location.search).get('next') || '';
+        return /^#\/[\w\-/?=&%.]*$/.test(n) ? n : '';
+      }
+      function users() {
+        try {
+          var db = JSON.parse(localStorage.getItem('hallco_admin_db') || 'null');
+          if (db && db.users) return db.users;
+        } catch (e) { /* bỏ qua */ }
+        return window.HallcoSeed.seed().users;
+      }
+      function fail(msg, el) {
+        err.textContent = msg;
+        err.hidden = false;
+        el.setAttribute('aria-invalid', 'true');
+        el.focus();
+      }
+
+      document.querySelector('[data-toggle]').addEventListener('click', function () {
+        var show = pw.type === 'password';
+        pw.type = show ? 'text' : 'password';
+        this.setAttribute('aria-pressed', String(show));
+        this.setAttribute('aria-label', show ? 'Ẩn mật khẩu' : 'Hiện mật khẩu');
+      });
+      document.querySelector('[data-forgot]').addEventListener('click', function (e) {
+        e.preventDefault();
+        err.hidden = false;
+        err.textContent = 'Liên hệ quản trị viên để đặt lại mật khẩu (bản giao diện chưa gửi được email).';
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        err.hidden = true;
+        email.removeAttribute('aria-invalid');
+        pw.removeAttribute('aria-invalid');
+        var em = email.value.trim().toLowerCase();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return fail('Nhập email đăng nhập.', email);
+        if (!pw.value) return fail('Nhập mật khẩu.', pw);
+        var u = users().filter(function (x) { return x.email.toLowerCase() === em; })[0];
+        if (!u || pw.value !== DEMO_PASSWORD) return fail('Email hoặc mật khẩu chưa đúng.', pw);
+        if (!u.active) return fail('Tài khoản này đã bị khóa. Liên hệ quản trị viên.', email);
+        localStorage.setItem('hallco_admin_session', JSON.stringify({ id: u.id, name: u.name, email: u.email, role: u.role }));
+        location.replace('/admin' + nextHash());
+      });
+    })();
+  </script>
+</body>
+</html>

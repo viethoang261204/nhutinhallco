@@ -155,7 +155,7 @@ def exists(lang, filename):
 
 def page_url(lang, filename):
     base = f"{SITE}/{LANGS[lang]['path']}"
-    return base if filename == "index.html" else base + filename
+    return base if filename == "index.html" else base + clean_url(filename)
 
 
 def lang_switch_html(lang, filename):
@@ -247,7 +247,7 @@ def schema(L, meta, body, filename, url):
         base = f"{SITE}/{L['path']}"
         items = [{"@type": "ListItem", "position": 1, "name": L["home"], "item": base}]
         for i, (label, href) in enumerate(meta["crumbs"], start=2):
-            items.append({"@type": "ListItem", "position": i, "name": label, "item": base + (href or filename)})
+            items.append({"@type": "ListItem", "position": i, "name": label, "item": base + clean_url(href or filename)})
         graph.append({"@type": "BreadcrumbList", "itemListElement": items})
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
 
@@ -300,6 +300,26 @@ def relocate(html_text):
     return SRCSET.sub(lambda m: 'srcset="' + re.sub(r"(,\s*)(assets/)", r"\1../\2", m.group(1)) + '"', html_text)
 
 
+LOCAL_PAGE = re.compile(r"^((?:\.\./)?(?:en/)?)([\w-]+)\.html([?#].*)?$")
+HREF = re.compile(r'href="([^"]*)"')
+
+
+def clean_url(link):
+    """Bỏ đuôi .html ở link nội bộ: "san-pham.html#x" -> "san-pham#x", "index.html" -> "./", "en/index.html" -> "en/".
+    Render (và .htaccess khi chạy Apache) tự trả đúng file .html cho đường dẫn không đuôi."""
+    m = LOCAL_PAGE.match(link or "")
+    if not m:
+        return link
+    prefix, name, rest = m.group(1), m.group(2), m.group(3) or ""
+    if name == "index":
+        return (prefix or "./") + rest
+    return prefix + name + rest
+
+
+def clean_links(html_text):
+    return HREF.sub(lambda m: f'href="{clean_url(m.group(1))}"', html_text)
+
+
 def build_chatbot_kb(lang):
     """Gộp các câu ở trang Hỏi đáp với chatbot/kb.json của ngôn ngữ đó thành js/chatbot-kb*.js."""
     L = LANGS[lang]
@@ -321,6 +341,9 @@ def build_chatbot_kb(lang):
     if missing:
         raise SystemExit(f"{lang}/chatbot/kb.json: không còn câu hỏi đáp {sorted(missing)}")
     entries += kb["entries"]
+    for e in entries:
+        if e.get("link"):
+            e["link"] = clean_url(e["link"])
     js = ("/* Sinh tự động bởi tools/build.py từ trang Hỏi đáp và chatbot/kb.json. Không sửa tay. */\n"
           "window.NT_KB = " + json.dumps(entries, ensure_ascii=False, separators=(",", ":")) + ";\n")
     (ROOT / L["kb_out"]).write_text(js, encoding="utf-8")
@@ -384,6 +407,7 @@ def build_lang(lang, sitemap):
         out = version_assets(out)
         if L["path"]:
             out = relocate(out)
+        out = clean_links(out)
         leftover = re.findall(r"\{\{[^}]+\}\}", out)
         if leftover:
             raise SystemExit(f"{lang}/{filename}: còn chỗ chưa thay {leftover}")

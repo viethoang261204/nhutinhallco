@@ -36,7 +36,7 @@
         'Anh chị hỏi về giá, lắp đặt, thông số, bảo hành hay loại hàng, em trả lời ngay theo tài liệu của hãng.',
       fallback: 'Câu này em chưa có sẵn câu trả lời chính xác. Để không trả lời sai, anh chị trao đổi trực tiếp với kỹ thuật Như Tín nhé, ' +
         'hoặc thử hỏi theo cách khác (ví dụ: <i>giá</i>, <i>bảo hành</i>, <i>xe cũ</i>, <i>dăm gỗ</i>).',
-      phone: 'Em là trợ lý tự động nên chưa nhận được số điện thoại qua khung chat. Anh chị điền số vào <a href="lien-he.html">form nhận báo giá</a> (chỉ mất 30 giây), kỹ thuật Như Tín sẽ gọi lại trong giờ làm việc.',
+      phone: 'Em là trợ lý tự động nên chưa nhận được số điện thoại qua khung chat. Anh chị điền số vào <a href="lien-he">form nhận báo giá</a> (chỉ mất 30 giây), kỹ thuật Như Tín sẽ gọi lại trong giờ làm việc.',
       hello: 'Chào anh chị! Anh chị đang quan tâm lắp sàn cho xe nào, chở loại hàng gì ạ? Hoặc bấm một câu gợi ý bên dưới.',
       thanks: 'Dạ không có gì ạ. Cần báo giá cụ thể cho xe của mình, anh chị gọi hoặc nhắn Zalo <b>0907 917 301</b> nhé.',
       helloRe: / (xin chao|chao|hello|hi|alo|helo) /,
@@ -73,7 +73,7 @@
         'Ask me about price, installation, specifications, warranty or cargo and I will answer straight from the factory documents.',
       fallback: 'I don\'t have an exact answer to that yet. Rather than guess, please talk to a Như Tín technician directly, ' +
         'or try asking another way (for example: <i>price</i>, <i>warranty</i>, <i>retrofit</i>, <i>wood chips</i>).',
-      phone: 'I am an automated assistant, so I can\'t take phone numbers in the chat. Please enter yours in the <a href="lien-he.html">quote form</a> (it takes 30 seconds) and a Như Tín technician will call you back during business hours.',
+      phone: 'I am an automated assistant, so I can\'t take phone numbers in the chat. Please enter yours in the <a href="lien-he">quote form</a> (it takes 30 seconds) and a Như Tín technician will call you back during business hours.',
       hello: 'Hello! Which truck are you thinking of fitting, and what cargo does it carry? Or pick a suggested question below.',
       thanks: 'You\'re welcome. For a quote for your own truck, call or message us on Zalo at <b>0907 917 301</b>.',
       helloRe: / (hello|hi|hey|good morning|good afternoon|xin chao|chao) /,
@@ -174,7 +174,7 @@
   }
 
   function actionsHtml(kind) {
-    var quote = '<a class="chat-act chat-act-main" href="lien-he.html" data-track="chat_quote">' + TEXT.quote + '</a>';
+    var quote = '<a class="chat-act chat-act-main" href="lien-he" data-track="chat_quote">' + TEXT.quote + '</a>';
     var call = '<a class="chat-act" href="tel:+84907917301" data-track="click_call">' + TEXT.call + '</a>';
     var zalo = '<a class="chat-act chat-act-zalo" href="https://zalo.me/0907917301" target="_blank" rel="noopener" data-track="click_zalo">' + TEXT.zalo + '</a>';
     if (kind === 'quote') return quote + call;
